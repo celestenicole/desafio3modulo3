@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desafio Funciones - Presionar Teclas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 30px;
+      background-color: #f9f9f9;
+    }
+
+    .color-box {
+      width: 200px;
+      height: 200px;
+      border: 2px solid black;
+      margin: 20px auto;
+      background-color: white;
+      border-radius: 10px;
+    }
+
+    .colorContainer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+  
+  <h1>Presionar A, S, D, Q, W o E</h1>
+
+  <div id="key" class="color-box"></div>
+  <div class="colorContainer"></div>
+
+  <script>
+
+    document.addEventListener('keydown', event => {
+      const keyDiv = document.getElementById('key');
+      color = 'white';
+
+      switch (event.key) {
+        case 'a': color = 'pink'; break;
+        case 's': color = 'orange'; break;
+        case 'd': color = 'skyblue'; break;
+        case 'q': createDivElement('purple'); break;
+        case 'w': createDivElement('gray'); break;
+        case 'e': createDivElement('brown'); break;
+
+        default: return; break;
+      }
+
+      keyDiv.style.backgroundColor = color;
+
+    });
+
+    function createDivElement(color) {
+      const colorContainer = document.querySelector('.colorContainer');
+      const div = document.createElement('div');
+      div.classList.add('color-box');
+      div.style.backgroundColor = color;
+      colorContainer.appendChild(div);
+    }
+
+
+  </script>
+</body>
+</html>

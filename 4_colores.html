@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desafio Funciones </title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f0f0f0;
+      color: #333;
+      height: 100vh;
+    }
+
+    .container {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+      font-size: 2rem;
+      color: #333;
+    }
+
+    .container-colors {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .box-color {
+      width: 150px;
+      height: 150px;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    #blue {
+      background-color: blue;
+    }
+
+    #red {
+      background-color: red;
+    }
+
+    #green {
+      background-color: green;
+    }
+
+    #yellow {
+      background-color: yellow;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Desafio colores</h1>
+
+    <div class="container-colors">
+      <div class="box-color" id="blue"></div>
+      <div class="box-color" id="red"></div>
+      <div class="box-color" id="green"></div>
+      <div class="box-color" id="yellow"></div>
+    </div>
+  </div>
+  
+  <script>
+    const boxColors = document.querySelectorAll('.box-color');
+
+    boxColors.forEach( box => {
+      box.addEventListener('click', function(event) {
+        event.target.style.backgroundColor = 'black';
+      })
+    });
+  </script>
+</body>
+</html>
